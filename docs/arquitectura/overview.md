@@ -78,6 +78,46 @@ graph TD
 | **API de Análisis de Sensores** | Endpoint para analizar datos de sensores y predecir fallos | Producción |
 | **API de Gestión de Carga** | Endpoint para optimizar la distribución de carga en aeronaves | Producción |
 
+### Quantum Routing/Rooting Layer
+
+A **Quantum Routing/Rooting Layer (QRL)** is an infrastructural middleware that dynamically manages quantum pathways for data transmission, entanglement distribution, and quantum computational task assignments, ensuring minimal decoherence, maximal entanglement fidelity, and optimized quantum channel utilization.
+
+#### Layer Functions and Characteristics:
+
+* **Quantum Path Optimization**
+  * Adaptive quantum state routing for reduced decoherence.
+  * Dynamic path selection based on entanglement metrics (fidelity, coherence time, latency).
+
+* **Entanglement Management**
+  * Generation, storage, and distribution of entanglement resources.
+  * Allocation and reuse policies for entangled qubits within a federated quantum network.
+
+* **Quantum State Rooting**
+  * Grounding quantum computations or communications to specified quantum hardware.
+  * Validation and stabilization (error mitigation) of quantum states at network nodes.
+
+* **Quantum Teleportation and Swapping**
+  * Protocol-level integration for state teleportation between quantum nodes.
+  * Swapping mechanisms to extend quantum network range (quantum repeaters).
+
+* **Security and Cryptographic Integration**
+  * Quantum Key Distribution (QKD) embedding.
+  * Quantum authentication and integrity validation (quantum signatures).
+
+* **Decentralized Control & Federated Coordination**
+  * Quantum network orchestration through decentralized consensus mechanisms.
+  * Interoperability with classical control systems and classical-quantum hybrid coordination.
+
+#### Application Domains within GAIA Platforms:
+
+| Domain                                               | Description                                                                                     |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Quantum Communications (GP-COM-QAO)**              | Management of quantum channels for secure and efficient data transmission.                      |
+| **Quantum-Augmented Propulsion (GP-AM-QuantumProp)** | Real-time quantum data routing for quantum-assisted flight control systems.                     |
+| **Space Networks & Probes (GP-SPACE-SAPR)**          | Quantum teleportation-enabled routing for deep-space communications and mission control.        |
+| **Quantum Ethical Governance (AMEDEO Integration)**  | Transparent quantum routing for verifiable ethical AI decisions within quantum computing tasks. |
+| **Quantum-Financial Systems (AGAD Protocol)**        | Secure, quantum-authenticated routing of financial data and quantum-backed digital assets.      |
+
 ## Tecnologías Utilizadas
 
 ### Computación Cuántica
