@@ -36,7 +36,7 @@ Description:
   pip install -r requirements.txt
 
   # Ejecutar la aplicación
-  python src/main.py
+  uvicorn src.main:app --reload
   ```
 
   ## 📚 Documentación
@@ -64,6 +64,12 @@ Description:
 
   # Configurar pre-commit hooks
   pre-commit install
+  ```
+
+  ### Ejecutar la aplicación en modo desarrollo
+
+  ```shellscript
+  uvicorn src.main:app --reload
   ```
 
   ## 🤝 Contribución
