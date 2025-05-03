@@ -1,89 +1,111 @@
-import sys
-from fastapi import FastAPI
-from pydantic import BaseModel
-from typing import List, Dict, Any
-from src.optimizar_ruta import optimizar_ruta
+## Endpoints
 
-app = FastAPI()
+### 1. `/api/v1/optimizar_ruta`
 
-class RutaRequest(BaseModel):
-    origen: List[float]
-    destino: List[float]
-    condiciones_climaticas: Dict[str, Any]
-    consumo_combustible: Dict[str, Any]
-    restricciones: Dict[str, Any]
-
-class RutaResponse(BaseModel):
-    ruta_optimizada: List[Dict[str, Any]]
-
-@app.post("/api/v1/optimizar_ruta", response_model=RutaResponse)
-def optimizar_ruta_endpoint(request: RutaRequest):
-    """
-    Optimiza la ruta de vuelo utilizando AMEDEO QAO.
-    
-    Args:
-        request: Datos de la solicitud de optimización de ruta
-        
-    Returns:
-        Ruta optimizada con waypoints y parámetros de vuelo
-    """
-    ruta_optimizada = optimizar_ruta(
-        request.origen,
-        request.destino,
-        request.condiciones_climaticas,
-        request.consumo_combustible,
-        request.restricciones
-    )
-    return RutaResponse(ruta_optimizada=ruta_optimizada)
-
-class SensoresRequest(BaseModel):
-    datos_sensores: Dict[str, Any]
-
-class SensoresResponse(BaseModel):
-    predicciones: List[Dict[str, Any]]
-
-@app.post("/api/v1/analizar_sensores", response_model=SensoresResponse)
-def analizar_sensores(request: SensoresRequest):
-    """
-    Analiza patrones en datos de sensores para predecir fallos.
-    
-    Args:
-        request: Datos de sensores de la aeronave
-        
-    Returns:
-        Predicciones de fallos
-    """
-    # Implementación del análisis de sensores
-    predicciones = [
-        {"sensor": "S1", "fallo": "F1", "probabilidad": 0.85},
-        {"sensor": "S2", "fallo": "F2", "probabilidad": 0.75}
-    ]
-    return SensoresResponse(predicciones=predicciones)
-
-class CargaRequest(BaseModel):
-    datos_carga: Dict[str, Any]
-
-class CargaResponse(BaseModel):
-    distribucion_optimizada: Dict[str, Any]
-
-@app.post("/api/v1/gestionar_carga", response_model=CargaResponse)
-def gestionar_carga(request: CargaRequest):
-    """
-    Optimiza la distribución de carga para maximizar eficiencia y seguridad.
-    
-    Args:
-        request: Datos de carga de la aeronave
-        
-    Returns:
-        Distribución optimizada de la carga
-    """
-    # Implementación de la gestión de carga
-    distribucion_optimizada = {
-        "seccion_1": {"peso": 1000, "centro_gravedad": 0.5},
-        "seccion_2": {"peso": 1500, "centro_gravedad": 0.6}
+- **Descripción**: Optimiza la ruta de vuelo utilizando AMEDEO QAO.
+- **Método**: POST
+- **URL**: `/api/v1/optimizar_ruta`
+- **Cuerpo de la solicitud**:
+  ```json
+  {
+    "origen": [40.7128, -74.0060],
+    "destino": [34.0522, -118.2437],
+    "condiciones_climaticas": {
     }
-    return CargaResponse(distribucion_optimizada=distribucion_optimizada)
+  }
+  ```
+- **Respuesta**:
+  ```json
+  {
+    "ruta_optimizada": [
+      {"waypoint": "WP1", "lat": 40.7128, "lon": -74.0060},
+      {"waypoint": "WP2", "lat": 41.0, "lon": -75.0},
+      {"waypoint": "WP3", "lat": 42.0, "lon": -76.0},
+      {"waypoint": "WP4", "lat": 34.0522, "lon": -118.2437}
+    ]
+  }
+  ```
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+### 2. `/api/v1/analizar_sensores`
+
+- **Descripción**: Optimiza la distribución de carga para maximizar eficiencia y seguridad.
+- **Método**: POST
+- **URL**: `/api/v1/gestionar_carga`
+- **Cuerpo de la solicitud**:
+  ```json
+  {
+    "datos_carga": {
+      "seccion_1": {"peso": 1000, "centro_gravedad": 0.5},
+      "seccion_2": {"peso": 1500, "centro_gravedad": 0.6}
+    }
+  }
+  ```
+- **Respuesta**:
+  ```json
+  {
+    "distribucion_optimizada": {
+      "seccion_1": {"peso": 1000, "centro_gravedad": 0.5},
+      "seccion_2": {"peso": 1500, "centro_gravedad": 0.6}
+    }
+  }
+  ```
+
+### 4. `/api/v1/quantum_route`
+
+- **Descripción**: Optimiza la ruta cuántica utilizando Quantum Approximate Optimization Algorithm (QAOA).
+- **Método**: POST
+- **URL**: `/api/v1/quantum_route`
+- **Cuerpo de la solicitud**:
+  ```json
+  {
+    "qubit": {...},
+    "origen": {...},
+    "destino": {...}
+  }
+  ```
+- **Respuesta**:
+  ```json
+  {
+    "ruta_cuantica": {...}
+  }
+  ```
+
+- **Ejemplo de solicitud**:
+  ```json
+  {
+    "qubit": "q1",
+    "origen": "node1",
+    "destino": "node2"
+  }
+  ```
+
+- **Ejemplo de respuesta**:
+  ```json
+  {
+    "ruta_cuantica": "optimized_route"
+  }
+  ```
+
+### 4. `/api/v1/gaia_interface_robbbot`
+
+- **Descripción**: Recibe datos de los sensores del motor cuántico y ajusta parámetros de entalpía/entropía en tiempo real.
+- **Método**: POST
+- **URL**: `/api/v1/gaia_interface_robbbot`
+- **Cuerpo de la solicitud**:
+  ```json
+  {
+    "datos_sensores": {...}
+  }
+  ```
+- **Respuesta**:
+  ```json
+  {
+    "ajustes": {
+      "entalpia": 123.45,
+      "entropia": 0.67,
+      "configuracion": {
+         "modo": "automático",
+         "umbral": 42
+      }
+    }
+  }
