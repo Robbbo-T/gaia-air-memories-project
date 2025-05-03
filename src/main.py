@@ -1,5 +1,3 @@
-# API Reference
-
 ## Endpoints
 
 ### 1. `/api/v1/optimizar_ruta`
@@ -29,30 +27,6 @@
   ```
 
 ### 2. `/api/v1/analizar_sensores`
-
-- **Descripción**: Analiza patrones en datos de sensores para predecir fallos.
-- **Método**: POST
-- **URL**: `/api/v1/analizar_sensores`
-- **Cuerpo de la solicitud**:
-  ```json
-  {
-    "datos_sensores": {
-      "sensor_1": {"valor": 0.85, "umbral": 0.9},
-      "sensor_2": {"valor": 0.75, "umbral": 0.8}
-    }
-  }
-  ```
-- **Respuesta**:
-  ```json
-  {
-    "predicciones": [
-      {"sensor": "S1", "fallo": "F1", "probabilidad": 0.85},
-      {"sensor": "S2", "fallo": "F2", "probabilidad": 0.75}
-    ]
-  }
-  ```
-
-### 3. `/api/v1/gestionar_carga`
 
 - **Descripción**: Optimiza la distribución de carga para maximizar eficiencia y seguridad.
 - **Método**: POST
