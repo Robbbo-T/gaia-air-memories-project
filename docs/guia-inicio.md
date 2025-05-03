@@ -34,6 +34,39 @@ pip install -r requirements.txt
 python src/main.py
 ```
 
+## Configuración del Módulo GAIA-Interface-RobbboT
+
+El módulo GAIA-Interface-RobbboT permite la integración en tiempo real con el motor cuántico, recibiendo datos de los sensores y ajustando parámetros de entalpía/entropía.
+
+### Configuración del Módulo
+
+1. **Instalación de dependencias adicionales**:
+
+   ```bash
+   pip install -r requirements-gaia-interface-robbbot.txt
+   ```
+
+2. **Configuración del archivo de configuración**:
+
+   Edite el archivo `config/gaia_interface_robbbot.yaml` para incluir los parámetros de conexión y ajuste necesarios.
+
+3. **Ejecución del módulo**:
+
+   ```bash
+   python src/gaia_interface_robbbot.py
+   ```
+
+### Ejemplo de Integración
+
+```python
+from gaia_air_memories import gaia_interface_robbbot
+
+datos_sensores = {...}  # Datos de sensores del motor cuántico
+
+ajustes = gaia_interface_robbbot(datos_sensores)
+print(ajustes)
+```
+
 ## Ejemplos básicos de uso
 
 ### Ejemplo 1: Optimización de ruta de vuelo

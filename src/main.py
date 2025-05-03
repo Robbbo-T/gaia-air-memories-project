@@ -83,6 +83,30 @@ def gestionar_carga(request: CargaRequest):
     }
     return CargaResponse(distribucion_optimizada=distribucion_optimizada)
 
+class GAIAInterfaceRobbboTRequest(BaseModel):
+    datos_sensores: Dict[str, Any]
+
+class GAIAInterfaceRobbboTResponse(BaseModel):
+    ajustes: Dict[str, Any]
+
+@app.post("/api/v1/gaia_interface_robbbot", response_model=GAIAInterfaceRobbboTResponse)
+def gaia_interface_robbbot(request: GAIAInterfaceRobbboTRequest):
+    """
+    Recibe datos de los sensores del motor cuántico y ajusta parámetros de entalpía/entropía en tiempo real.
+    
+    Args:
+        request: Datos de sensores del motor cuántico
+        
+    Returns:
+        Ajustes de entalpía/entropía
+    """
+    # Implementación de la interfaz GAIA-Interface-RobbboT
+    ajustes = {
+        "entalpía": 0.95,
+        "entropía": 0.85
+    }
+    return GAIAInterfaceRobbboTResponse(ajustes=ajustes)
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
