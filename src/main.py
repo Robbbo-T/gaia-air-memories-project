@@ -2,6 +2,7 @@ import sys
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List, Dict, Any
+from src.optimizar_ruta import optimizar_ruta
 
 app = FastAPI()
 
@@ -16,7 +17,7 @@ class RutaResponse(BaseModel):
     ruta_optimizada: List[Dict[str, Any]]
 
 @app.post("/api/v1/optimizar_ruta", response_model=RutaResponse)
-def optimizar_ruta(request: RutaRequest):
+def optimizar_ruta_endpoint(request: RutaRequest):
     """
     Optimiza la ruta de vuelo utilizando AMEDEO QAO.
     
@@ -26,13 +27,13 @@ def optimizar_ruta(request: RutaRequest):
     Returns:
         Ruta optimizada con waypoints y parámetros de vuelo
     """
-    # Implementación del algoritmo AMEDEO QAO
-    ruta_optimizada = [
-        {"waypoint": "WP1", "lat": 40.7128, "lon": -74.0060},
-        {"waypoint": "WP2", "lat": 41.0, "lon": -75.0},
-        {"waypoint": "WP3", "lat": 42.0, "lon": -76.0},
-        {"waypoint": "WP4", "lat": 34.0522, "lon": -118.2437}
-    ]
+    ruta_optimizada = optimizar_ruta(
+        request.origen,
+        request.destino,
+        request.condiciones_climaticas,
+        request.consumo_combustible,
+        request.restricciones
+    )
     return RutaResponse(ruta_optimizada=ruta_optimizada)
 
 class SensoresRequest(BaseModel):
