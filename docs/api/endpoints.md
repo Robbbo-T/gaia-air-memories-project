@@ -74,6 +74,12 @@
 - **Respuesta**:
   ```json
   {
-    "ajustes": {...}
+    "ajustes": {
+      "entalpia": 123.45,
+      "entropia": 0.67,
+      "configuracion": {
+         "modo": "automático",
+         "umbral": 42
+      }
+    }
   }
-  ```
