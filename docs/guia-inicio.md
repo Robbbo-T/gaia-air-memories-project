@@ -53,7 +53,7 @@ El módulo GAIA-Interface-RobbboT permite la integración en tiempo real con el 
 3. **Ejecución del módulo**:
 
    ```bash
-   python src/gaia_interface_robbbot.py
+   python src/main.py
    ```
 
 ### Ejemplo de Integración
