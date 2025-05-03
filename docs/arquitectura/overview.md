@@ -428,7 +428,7 @@ def _evaluar_seguridad_ruta(waypoints, condiciones_climaticas, restricciones):
 Voy a implementar una función completa para visualizar la ruta optimizada en un mapa interactivo. Esta función utilizará Folium para crear mapas interactivos y Matplotlib para visualizaciones complementarias como el perfil de altitud.
 
 ```python file="src/visualizacion/mapa_ruta.py"
-...**import folium
+import folium
 from folium import plugins
 import matplotlib.pyplot as plt
 import numpy as np
@@ -439,7 +439,6 @@ from dataclasses import dataclass
 import sys
 import os
 
-# Añadir el directorio padre al path para importar desde otros módulos
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from optimizacion.rutas import RutaOptimizada, Waypoint
 
