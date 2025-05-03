@@ -1025,3 +1025,46 @@ Optimización en tiempo real de la distribución de carga para maximizar eficien
 - Cálculo instantáneo del centro de gravedad óptimo
 - Recomendaciones de redistribución durante operaciones
 - Integración con sistemas de gestión de pasajeros y carga
+
+## Fundamentos Teóricos de la Termodinámica Cuántica
+
+### Contexto Histórico y Estado del Arte
+
+La termodinámica cuántica ha evolucionado significativamente desde los conceptos clásicos de Carnot y Clausius hacia enfoques modernos que incluyen el entrelazamiento y la teoría de la información cuántica. Este desarrollo ha permitido una comprensión más profunda de los procesos termodinámicos a nivel cuántico y ha abierto nuevas posibilidades para la optimización y el control de sistemas cuánticos.
+
+### Formalismos Matemáticos Adicionales
+
+Además de la entropía de von Neumann, es importante considerar los costes energéticos en circuitos cuánticos. El límite de Bremermann y el principio de Landauer son conceptos clave que establecen los límites energéticos de la computación cuántica. Estos principios ayudan a entender las restricciones fundamentales en la eficiencia energética de los sistemas cuánticos y son esenciales para el diseño de motores cuánticos eficientes.
+
+## Hoja de Ruta
+
+### Hitos de Transferencia Tecnológica
+
+Detalla cómo las tecnologías desarrolladas pasan de la fase de investigación a la adopción industrial o gubernamental.
+
+- **Modelos de colaboración público-privada** (acuerdos con agencias espaciales, laboratorios nacionales, etc.)
+- **Programas de incubación y spin-offs** alrededor del motor cuántico
+
+### Estrategia de Gestión de Riesgos
+
+Dado que son tecnologías emergentes, incluir un análisis de riesgos (seguridad cuántica, fiabilidad criogénica, etc.) y la forma en que GAIA-AIR, AMPEL y Robbbo-T mitigan esas vulnerabilidades.
+
+## Conclusiones y Perspectivas
+
+### Sinergia entre GAIA-AIR y otras iniciativas
+
+Podrías describir brevemente cómo GAIA-AIR se coordina con proyectos internacionales (p.ej., Quantum Flagship de la UE, National Quantum Initiative de EE.UU.) y cómo esto impacta el roadmap.
+
+### Visión a Largo Plazo para la AGI
+
+Ya que mencionas NeuronBit & NeuronQuBit, sería valioso incluir una sección sobre cómo la evolución de estos motores cuánticos, junto con la computación cuántica avanzada, se integra en la carrera hacia la Inteligencia General Artificial (AGI).
+
+## Apéndices Técnicos
+
+### Métodos de Calibración de Instrumentación
+
+Incluir una guía sobre la calibración (temperatura, campos magnéticos, potencia láser) y la metrología cuántica.
+
+### Dataset de Resultados Experimentales
+
+Si existe una base de datos de corridas experimentales con su ID único y la descripción de cada protocolo de prueba, podría referenciarse en un apéndice, facilitando la trazabilidad y replicabilidad.

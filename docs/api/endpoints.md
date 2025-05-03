@@ -145,3 +145,27 @@
     "ruta_cuantica": "optimized_route"
   }
   ```
+
+### 4. `/api/v1/gaia_interface_robbbot`
+
+- **Descripción**: Recibe datos de los sensores del motor cuántico y ajusta parámetros de entalpía/entropía en tiempo real.
+- **Método**: POST
+- **URL**: `/api/v1/gaia_interface_robbbot`
+- **Cuerpo de la solicitud**:
+  ```json
+  {
+    "datos_sensores": {...}
+  }
+  ```
+- **Respuesta**:
+  ```json
+  {
+    "ajustes": {
+      "entalpia": 123.45,
+      "entropia": 0.67,
+      "configuracion": {
+         "modo": "automático",
+         "umbral": 42
+      }
+    }
+  }
