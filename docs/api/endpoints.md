@@ -59,3 +59,39 @@
     "distribucion_optimizada": {...}
   }
   ```
+
+### 4. `/api/v1/quantum_route`
+
+- **Descripción**: Optimiza la ruta cuántica utilizando Quantum Approximate Optimization Algorithm (QAOA).
+- **Método**: POST
+- **URL**: `/api/v1/quantum_route`
+- **Cuerpo de la solicitud**:
+  ```json
+  {
+    "qubit": {...},
+    "origen": {...},
+    "destino": {...}
+  }
+  ```
+- **Respuesta**:
+  ```json
+  {
+    "ruta_cuantica": {...}
+  }
+  ```
+
+- **Ejemplo de solicitud**:
+  ```json
+  {
+    "qubit": "q1",
+    "origen": "node1",
+    "destino": "node2"
+  }
+  ```
+
+- **Ejemplo de respuesta**:
+  ```json
+  {
+    "ruta_cuantica": "optimized_route"
+  }
+  ```
