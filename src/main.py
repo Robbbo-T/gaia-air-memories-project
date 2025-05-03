@@ -83,30 +83,7 @@ def gestionar_carga(request: CargaRequest):
     }
     return CargaResponse(distribucion_optimizada=distribucion_optimizada)
 
-class QuantumRouteRequest(BaseModel):
-    origen: str
-    destino: str
-
-class QuantumRouteResponse(BaseModel):
-    ruta_cuantica: str
-
-@app.post("/api/v1/quantum_route", response_model=QuantumRouteResponse)
-def quantum_route(request: QuantumRouteRequest):
-    """
-    Optimiza la ruta cuántica utilizando Quantum Approximate Optimization Algorithm (QAOA).
-    
-    Args:
-        request: Datos de la solicitud de optimización de ruta cuántica
-        
-    Returns:
-        Ruta cuántica optimizada
-    """
-    # Implementación del algoritmo QAOA
-    ent_fidelity = calcEntanglementFidelity(request.origen, request.destino)
-    pet_core_score = validatePathPETCore(ent_fidelity)
-    optimized_route = QAOA.optimize(pet_core_score, constraints=GAIA_QUANTUM_CONSTRAINTS)
-    return QuantumRouteResponse(ruta_cuantica=optimized_route)
-
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
