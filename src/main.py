@@ -84,7 +84,6 @@ def gestionar_carga(request: CargaRequest):
     return CargaResponse(distribucion_optimizada=distribucion_optimizada)
 
 class QuantumRouteRequest(BaseModel):
-    qubit: str
     origen: str
     destino: str
 
