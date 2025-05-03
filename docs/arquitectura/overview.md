@@ -45,6 +45,9 @@ graph TD
     E --> G[Base de Datos Cuántica]
     E --> H[Almacenamiento Tradicional]
     I[Sistemas de Aeronave] --> C
+    C --> J[API de Optimización de Ruta]
+    C --> K[API de Análisis de Sensores]
+    C --> L[API de Gestión de Carga]
 ```
 
 ### Flujo de Datos Principal
@@ -71,6 +74,9 @@ graph TD
 | **Middleware de Integración** | Capa de compatibilidad con sistemas aeronáuticos existentes | Producción |
 | **Interfaz Adaptativa** | UI/UX contextual según rol y situación operativa | Alpha |
 | **Framework de Seguridad Cuántica** | Protección contra amenazas clásicas y cuánticas | Desarrollo |
+| **API de Optimización de Ruta** | Endpoint para optimizar rutas de vuelo utilizando AMEDEO QAO | Producción |
+| **API de Análisis de Sensores** | Endpoint para analizar datos de sensores y predecir fallos | Producción |
+| **API de Gestión de Carga** | Endpoint para optimizar la distribución de carga en aeronaves | Producción |
 
 ## Tecnologías Utilizadas
 
@@ -621,7 +627,7 @@ def visualizar_ruta(ruta: RutaOptimizada,
         grupo_clima.add_to(mapa)
     
     # Visualizar restricciones si están disponibles
-    if restricciones and 'zonas_prohibidas' in restricciones:
+    if restricciones y 'zonas_prohibidas' in restricciones:
         grupo_restricciones = folium.FeatureGroup(name='Zonas Restringidas')
         
         for zona in restricciones['zonas_prohibidas']:
